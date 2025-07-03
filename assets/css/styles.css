@@ -1,0 +1,166 @@
+/* Root Colors */
+:root {
+    --gold-accent: #d4af37;
+}
+
+/* Gold Accent Utilities */
+.gold-accent {
+    color: var(--gold-accent) !important;
+}
+
+.bg-gold-accent {
+    background-color: var(--gold-accent) !important;
+}
+
+.border-t-gold-accent {
+    border-top-color: var(--gold-accent);
+}
+
+/* Loader Transition */
+#loader {
+    transition: opacity 0.5s ease;
+}
+
+/* Header Scroll Behavior */
+#header {
+    transition: background-color 0.3s ease;
+}
+
+#header.scrolled {
+    background-color: rgba(255, 255, 255, 0.95);
+}
+
+/* Smooth Scrolling */
+.smooth-scroll {
+    scroll-behavior: smooth;
+}
+
+/* Responsive Images */
+.prose img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+
+/* Parallax Effect */
+.bg-fixed {
+    background-attachment: fixed;
+}
+
+@media (max-width: 768px) {
+    .bg-fixed {
+        background-attachment: scroll;
+    }
+}
+
+/* Flower Petals Animation */
+.flower-petal {
+    position: absolute;
+    top: -50px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    opacity: 0.7;
+    z-index: 20;
+    pointer-events: none;
+    animation: fall linear infinite;
+}
+
+@keyframes fall {
+    0% {
+        transform: translateY(-10%) rotate(0deg) scale(0.5);
+        opacity: 0;
+    }
+    10% {
+        opacity: 0.7;
+    }
+    100% {
+        transform: translateY(120vh) rotate(360deg) scale(1);
+        opacity: 0;
+    }
+}
+
+/* Scroll Animation Classes */
+[data-scroll] {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+[data-scroll].animated {
+    opacity: 1;
+    transform: translateY(0) !important;
+}
+
+/* Fade Animations */
+.fadeInUp {
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.fadeIn {
+    transition: opacity 1s ease-out;
+}
+
+/* Image Gallery */
+[data-target] {
+    transition: all 0.5s cubic-bezier(0.25, 0.8, 0.25, 1);
+    will-change: transform, opacity;
+    opacity: 0.7;
+}
+
+[data-target]:hover {
+    transform: scale(1.05);
+    opacity: 1 !important;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+}
+
+#mainImage {
+    transition: background-image 0.3s ease-in-out, opacity 0.3s ease-in-out;
+}
+
+/* Music Player Button */
+#musicToggle {
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+#musicToggle:hover {
+    transform: scale(1.1);
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
+}
+
+/* Text Gold Accent */
+.text-gold-accent {
+    color: var(--gold-accent);
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+/* Button Hover Glow */
+.hover-glow:hover,
+.bg-gold-accent:hover {
+    box-shadow: 0 0 15px rgba(212, 175, 55, 0.7);
+}
+
+/* Scroll Indicator Bounce */
+.animate-bounce {
+    animation: bounce 2s infinite;
+}
+
+@keyframes bounce {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-8px);
+    }
+}
+
+/* Responsive Overrides */
+@media (max-width: 768px) {
+    .lg\:text-left {
+        text-align: center;
+    }
+
+    .lg\:grid-cols-2 {
+        grid-template-columns: 1fr !important;
+    }
+}
